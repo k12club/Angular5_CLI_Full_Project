@@ -1,0 +1,55 @@
+<app-nav></app-nav>
+<carousel>
+  <slide>
+    <img src="https://cryptohustle.com/wp-content/uploads/2016/04/web-Main.jpg" alt="first slide" style="display: block; width: 100%;">
+  </slide>
+  <slide>
+    <img src="https://cryptohustle.com/wp-content/uploads/2016/04/web-Main.jpg" alt="second slide" style="display: block; width: 100%;">
+  </slide>
+  <slide>
+    <img src="https://cryptohustle.com/wp-content/uploads/2016/04/web-Main.jpg" alt="third slide" style="display: block; width: 100%;">
+  </slide>
+</carousel>
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+  <div class="container">
+  <div class="row">
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">
+      
+    </div>
+    <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10">
+      <div class="table-responsive-md">
+      <table class="table table-dark">
+        
+        <thead>
+          <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Coin Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">market cap</th>
+            <th scope="col">volume(24h)</th>
+            <th scope="col">change(24h)</th>
+            <th scope="col">price graph(7d)</th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let market of markets; let i=index">
+            <th scope="row">{{market.rank}}</th>
+            <td><a href="https://coinmarketcap.com/currencies/{{market.website_slug}}">{{market.name}}</a></td>
+            <td>{{market.quotes.USD.price}}</td>
+            <td>{{market.quotes.USD.market_cap | currency:'USD':true:'4.0'}}</td>
+            <td>{{market.quotes.USD.volume_24h}}</td>
+            <td>{{market.quotes.USD.percent_change_24h}}</td>
+            <td>{{market.quotes.USD.percent_change_24h}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1">
+      
+    </div>
+  </div>
+</div>
+</div>

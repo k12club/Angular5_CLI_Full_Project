@@ -1,0 +1,87 @@
+<style>
+  td {
+    vertical-align: middle !important;
+  }
+</style>
+
+<div class="container">
+  <!--The content below is only a placeholder and can be replaced.-->
+  <div style="text-align:center">
+    <br>
+    <img src="http://www.codemobiles.com/biz/images/codemobiles_logo.png?ref=10" alt="www.codemobiles.com" width="300">
+    <h1>
+      Angular + Firebase Database
+    </h1>
+  </div>
+
+
+  
+  <form>
+    <legend>Class Enrollmewnt</legend>
+  
+    <!-- Firstname -->
+    <div class="form-group">
+      <label for="firstname">First name</label>
+      <input name="firstname" [(ngModel)]="student.firstname" type="text" class="form-control" id="firstname" placeholder="First name">
+    </div>
+
+      <!-- Lastname -->
+      <div class="form-group">
+        <label for="lastname">Lastname</label>
+        <input name="lastname" [(ngModel)]="student.lastname" type="text" class="form-control" id="lastname" placeholder="Last Name">
+      </div>
+
+    <!-- Email -->
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input name="email" [(ngModel)]="student.email" type="email" class="form-control" id="email" placeholder="Email">
+      </div>
+
+    <!-- Course -->
+    <div class="form-group">
+        <label for="course">Course</label>
+        <input name="course" [(ngModel)]="student.course" type="text" class="form-control" id="course" placeholder="Course">
+      </div>
+
+
+    <button (click)="onClickSubmit()" class="btn btn-primary">Submit</button>
+  </form>
+  
+<br>
+<br>
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+        <th>No#</th>        
+        <th>Fistname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Course</th>
+        <th>Date-Time</th>
+        <th>Payment</th>
+        <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of items | async; let i = index;">
+      <td>{{i+1}}</td>
+      <td>{{item.payload.val().firstname}}</td>
+      <td>{{item.payload.val().lastname}}</td>
+      <td>{{item.payload.val().email}}</td>
+      <td>{{item.payload.val().course}}</td>
+      <td>{{item.payload.val().timestamp | date: 'dd/MM/yyyy - HH:mm'}}</td>
+      <td>{{item.payload.val().payment}}</td>
+      <td>
+        
+        <button (click)="onClickDelete(item)" type="button" class="btn btn-danger">DEL</button> 
+        <button (click)="onClickPayment(item)" type="button" class="btn btn-success">PAY</button>
+        
+        
+      </td>
+    </tr>   
+  </tbody>
+</table>
+
+</div>

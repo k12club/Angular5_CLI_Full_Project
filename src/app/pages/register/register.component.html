@@ -1,0 +1,70 @@
+<div class="app flex-row align-items-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card mx-4">
+            <div class="card-body p-4">
+              <h1>Register</h1>
+              <p class="text-muted">Create your account</p>
+              <!-- <div class="input-group mb-3">
+                <span class="input-group-addon"><i class="icon-user"></i></span>
+                <input name="Username" [(ngModel)]="user.firstname" type="text" class="form-control" placeholder="First name">
+              </div> -->
+
+              
+  
+              <div class="input-group mb-3">
+                <span class="input-group-addon">@</span>
+                <input name="email" [(ngModel)]="user.email" type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+  
+              <div class="input-group mb-3">
+                <span class="input-group-addon"><i class="icon-lock"></i></span>
+                <input name="password" [(ngModel)]="user.password" type="password" class="form-control" id="password" placeholder="Password">
+              </div>
+  
+              <div class="input-group mb-4">
+                <span class="input-group-addon"><i class="icon-lock"></i></span>
+                <input type="password" class="form-control" placeholder="Repeat password">
+              </div>
+  
+              <button  type="button" (click)='onClickSubmit(user)' class="btn btn-block btn-success">Create Account</button>
+              <button type="button" (click)="backtologin()" class="btn btn-block btn-success">Login</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <form>
+    <legend>เลือกชุดข้อมูล</legend> -->
+  
+    <!-- Firstname -->
+    <!-- <div class="form-group">
+      <label for="firstname">First name</label>
+      <input name="firstname" [(ngModel)]="student.firstname" type="text" class="form-control" id="firstname" placeholder="First name">
+    </div> -->
+
+      <!-- Lastname -->
+      <!-- <div class="form-group">
+        <label for="lastname">Lastname</label>
+        <input name="lastname" [(ngModel)]="student.lastname" type="text" class="form-control" id="lastname" placeholder="Last Name">
+      </div> -->
+
+    <!-- Email -->
+    <!-- <div class="form-group">
+        <label for="email">Email</label>
+        <input name="email" [(ngModel)]="student.email" type="email" class="form-control" id="email" placeholder="Email">
+      </div> -->
+
+    <!-- Course -->
+    <!-- <div class="form-group">
+        <label for="course">Course</label>
+        <input name="course" [(ngModel)]="student.course" type="text" class="form-control" id="course" placeholder="Course">
+      </div> -->
+
+
+    <!-- <button (click)="onClickSubmit()" class="btn btn-primary">Submit</button>
+  </form> -->
