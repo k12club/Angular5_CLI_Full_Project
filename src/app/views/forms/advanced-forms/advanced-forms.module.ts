@@ -18,6 +18,7 @@ import { SelectModule } from 'ng-select';
 import { AdvancedFormsRoutingModule } from './advanced-forms-routing.module';
 
 import { AdvancedFormsComponent } from './advanced-forms.component';
+import { DataProfileService } from '../../../service/data-profile.service';
 
 @NgModule({
   imports: [
@@ -29,8 +30,13 @@ import { AdvancedFormsComponent } from './advanced-forms.component';
     BsDatepickerModule.forRoot(),
     SelectModule
   ],
-  declarations: [
+  declarations: [ 
     AdvancedFormsComponent
-  ]
+    ],
+    providers:[
+      DataProfileService
+    ]
+
+    
 })
 export class AdvancedFormsModule { }

@@ -7,15 +7,21 @@ import { BasicFormsRoutingModule } from './basic-forms-routing.module';
 
 import { BasicFormsComponent } from './basic-forms.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { DataProfileService } from '../../../service/data-profile.service';
 
 @NgModule({
   imports: [
     BasicFormsRoutingModule,
     BsDropdownModule.forRoot(),
-    FormsModule
+    FormsModule,
+    NgModule
+
   ],
   declarations: [
     BasicFormsComponent
+  ],
+  providers:[
+    DataProfileService
   ]
 })
 export class BasicFormsModule { }

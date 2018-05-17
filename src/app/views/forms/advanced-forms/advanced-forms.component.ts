@@ -1,5 +1,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import {IOption} from 'ng-select';
+import { IOption } from 'ng-select';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Profile } from '../../../pages/model/profile';
+import { DataProfileService } from '../../../service/data-profile.service';
 
 @Component({
   templateUrl: 'advanced-forms.component.html',
@@ -42,42 +45,63 @@ export class AdvancedFormsComponent {
 
   // Timepicker
 
-  public hstep:number = 1;
-  public mstep:number = 15;
-  public ismeridian:boolean = true;
-  public isEnabled:boolean = true;
+  public hstep: number = 1;
+  public mstep: number = 15;
+  public ismeridian: boolean = true;
+  public isEnabled: boolean = true;
 
-  public mytime:Date = new Date();
-  public options:any = {
+  public mytime: Date = new Date();
+  public options: any = {
     hstep: [1, 2, 3],
     mstep: [1, 5, 10, 15, 25, 30]
   };
 
-  public toggleMode():void {
+  public toggleMode(): void {
     this.ismeridian = !this.ismeridian;
   };
 
-  public update():void {
+  public update(): void {
     let d = new Date();
     d.setHours(14);
     d.setMinutes(0);
     this.mytime = d;
   };
 
-  public changed():void {
+  public changed(): void {
     console.log('Time changed to: ' + this.mytime);
   };
 
-  public clear():void {
+  public clear(): void {
     this.mytime = void 0;
   };
 
   // ng2-select
   public countries: Array<IOption> = [
-    {label: 'Belgium', value: 'BE'},
-    {label: 'Luxembourg', value: 'LU'},
-    {label: 'Netherlands', value: 'NL'}
+    { label: 'Belgium', value: 'BE' },
+    { label: 'Luxembourg', value: 'LU' },
+    { label: 'Netherlands', value: 'NL' }
   ];
 
   public selectedCountries: Array<string> = ['BE', 'NL'];
+
+
+  profileFrom: Profile = { email: '', wallet: '', username: '', poolname: null };
+  constructor(private service: DataProfileService
+              
+  ) {
+
+
+  }
+
+
+
+  submitprofile(profileFrom) {
+    console.log(profileFrom);
+    
+    this.service.save(profileFrom).then(res => {
+    console.log(res);
+
+    })
+
+  }
 }
