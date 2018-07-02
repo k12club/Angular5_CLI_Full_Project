@@ -25,24 +25,6 @@
       <input name="firstname" [(ngModel)]="student.firstname" type="text" class="form-control" id="firstname" placeholder="First name">
     </div>
 
-      <!-- Lastname -->
-      <div class="form-group">
-        <label for="lastname">Lastname</label>
-        <input name="lastname" [(ngModel)]="student.lastname" type="text" class="form-control" id="lastname" placeholder="Last Name">
-      </div>
-
-    <!-- Email -->
-    <div class="form-group">
-        <label for="email">Email</label>
-        <input name="email" [(ngModel)]="student.email" type="email" class="form-control" id="email" placeholder="Email">
-      </div>
-
-    <!-- Course -->
-    <div class="form-group">
-        <label for="course">Course</label>
-        <input name="course" [(ngModel)]="student.course" type="text" class="form-control" id="course" placeholder="Course">
-      </div>
-
 
     <button (click)="onClickSubmit()" class="btn btn-primary">Submit</button>
   </form>
